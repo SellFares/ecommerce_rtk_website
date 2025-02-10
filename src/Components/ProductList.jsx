@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addItemToCart } from './CartSlice';
-
 import './ProductList.css'; 
 
 const ProductList = () => {
@@ -27,10 +26,11 @@ const ProductList = () => {
         {products.map(product => (
           <li key={product.id} className="product-list-item">
           <span>{product.name} - ${product.price}</span>
-          <button>
+          <button
             className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`}
             onClick={() => handleAddToCart(product)}
             disabled={disabledProducts.includes(product.id)} // Disable button if product is in disabledProducts
+            >
             Add to Cart
           </button>
         </li>
