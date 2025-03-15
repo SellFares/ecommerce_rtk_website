@@ -1,0 +1,36 @@
+.super-coins-container {
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fffdf0;
+}
+
+.super-coins-info {
+  text-align: center;
+}
+
+.coins-display {
+  margin: 15px 0;
+  font-size: 24px;
+}
+
+.coin-icon {
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.coin-amount {
+  font-weight: bold;
+  color: #ffa500;
+}
+
+.cart-details {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.cart-details p {
+  margin: 5px 0;
+  color: #666;
+}
