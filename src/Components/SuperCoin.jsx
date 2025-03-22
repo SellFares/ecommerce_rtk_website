@@ -7,6 +7,7 @@ const SuperCoin = () => {
     const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
     /*
+    // max amount capped at 400, webpage breaks 
     useEffect(() => {
         if (totalAmount >= 100 && totalAmount < 200) {
             setSuperCoins(10);
@@ -21,6 +22,7 @@ const SuperCoin = () => {
     */
 
     /*
+    // super coins stop accumulating after 400
     useEffect(() => {
         const coinRules = [
             { min: 100, max: 199.99, coins: 10 },
@@ -34,6 +36,7 @@ const SuperCoin = () => {
     }, [totalAmount]);
     */
 
+    // super coins accumulating indefinitely according to total amount
     useEffect(() => {
         const calculatedCoins = Math.floor(totalAmount / 100) * 10;
         setSuperCoins(calculatedCoins);
