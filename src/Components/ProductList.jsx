@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from './CartSlice';
 import './ProductList.css';
 
@@ -7,6 +7,13 @@ import './ProductList.css';
 const ProductList = () => {
   const dispatch = useDispatch();
   const [disabledProducts, setDisabledProducts] = useState([]);
+  const cartItems = useSelector(state => state.cart.cartItems);
+
+  // added this to fix addItemToCart button not working after removing that item from cart once.
+  useEffect(() => {
+    const newDisabledProducts = cartItems.map((item) => item.id);
+    setDisabledProducts(newDisabledProducts);
+  }, [cartItems]);
 
   const products = [
     { id: 1, name: 'Product A', price: 60 },
@@ -15,8 +22,10 @@ const ProductList = () => {
   ];
 
   const handleAddToCart = (product) => {
-    dispatch(addItemToCart(product));
-    setDisabledProducts([...disabledProducts, product.id]); //mark the product as disabled after adding to cart
+    if (!disabledProducts.includes(product.id)) {
+      dispatch(addItemToCart(product));
+      setDisabledProducts([...disabledProducts, product.id]);
+    }
   };
 
   return (
