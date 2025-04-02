@@ -7,7 +7,7 @@ const App = () => {
   return (
  
       <div>
-        <h1 className='app-heading'>E-Commerce Application</h1>
+        <h1 className='app-heading'>E-Commerce Application by Zin. How do you think NK?</h1>
         <ProductList />
         <ShoppingCart />
       </div>
