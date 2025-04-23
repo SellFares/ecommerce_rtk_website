@@ -43,4 +43,4 @@ export const {
     increaseItemQuantity,
     decreaseItemQuantity,
   } = CartSlice.actions;
-  export default CartSlice.reducer;
+  export default CartSlice.reducer
