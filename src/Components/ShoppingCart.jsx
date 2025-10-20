@@ -34,7 +34,7 @@ const ShoppingCart = () => {
                 <span>{item.name} - ${item.price}</span>
                 <div className='quantity-controls'>
                     <button onClick={ () => handleDecreaseQuantity(item.id) }>-</button>
-                    <span>{item.quantity}</span>
+                    <span> , Quantity: {item.quantity} , </span>
                     <button onClick={ () => handleIncreaseQuantity(item.id) }>+</button>
                 </div>
                 <button className='remove-item-btn' onClick={() => handleRemoveItem(item.id)}>Remove</button>

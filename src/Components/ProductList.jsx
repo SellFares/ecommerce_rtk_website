@@ -17,7 +17,6 @@ const ProductList = () => {
   ];
 
   const handleAddToCart = product => {
-    console.log("nzelt");
     dispatch(addItemToCart(product));   // Add product to cart
   };
 
@@ -31,7 +30,7 @@ const ProductList = () => {
                 <button
                     className={`add-to-cart-btn ${cartItems.some(item => item.id === product.id) ? 'disabled' : ''}`}
                     //The .some() method checks if any of the elements in an array pass a test
-                    onclick={ () => handleAddToCart(product) }
+                    onClick={ () => handleAddToCart(product) }
                     disabled={ cartItems.some( item => item.id === product.id )}
                 >
                     { cartItems.some(item => item.id === product.id ) ? 'Added' : 'Add to Cart' }
